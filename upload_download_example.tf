@@ -1,4 +1,4 @@
-provider "aws" {
+/*provider "aws" {
   access_key = "AKIAJ34BCF73VWY57ZDQ"
   secret_key = "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"
   region     = "us-east-1"
@@ -20,4 +20,4 @@ resource "aws_s3_bucket_object" "object" {
   etag = "${filemd5("./assert.py")}"
 
   depends_on = ["aws_s3_bucket.first_bucket"]
-}
+}*/
