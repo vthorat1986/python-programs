@@ -14,7 +14,7 @@ resource "aws_s3_bucket" "first_bucket" {
     enabled = "true"
   }
   
-  depends_on = ["local_file.foo"]
+  /*depends_on = ["local_file.foo"]*/
 }
 
 resource "aws_s3_bucket_object" "object" {
