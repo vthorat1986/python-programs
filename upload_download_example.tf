@@ -14,8 +14,8 @@ resource "aws_s3_bucket" "first_bucket" {
 resource "aws_s3_bucket_object" "object" {
   bucket = "first-vt-bucket-1511"
   key = "first_object"
-  source = "${local_file.foo}"
-  etag = "${filemd5("${local_file.foo}")}"
+  source = "${local_file.foo.filename}"
+  etag = "${filemd5("${local_file.foo.filename}")}"
 
   depends_on = ["aws_s3_bucket.first_bucket"]
 }
