@@ -1,5 +1,5 @@
 data "local_file" "foo" {
-    filename = "$./assert.py"
+    filename = "./assert.py"
 }
 
 resource "aws_s3_bucket" "first_bucket" {
