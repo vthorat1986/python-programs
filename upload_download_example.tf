@@ -1,1 +1,17 @@
-/*This is a dummy .tf file*/
+resource "aws_s3_bucket" "first_bucket" {
+  bucket = "first-vt-bucket-1511"
+  acl = "private"
+
+  versioning {
+    enabled = "true"
+  }
+}
+
+resource "aws_s3_bucket_object" "object" {
+  bucket = "first-vt-bucket-1511"
+  key = "first_object"
+  source = "./assert.py"
+  etag = "${filemd5("./assert.py")}"
+
+  depends_on = ["aws_s3_bucket.first_bucket"]
+}
